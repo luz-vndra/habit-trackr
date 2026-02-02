@@ -1,3 +1,5 @@
+import HabitList from "./HabitList";
+
 export default function HabitsPage() {
   return (
     <section className="space-y-4">
@@ -8,12 +10,7 @@ export default function HabitsPage() {
         </button>
       </header>
 
-      <ul className="space-y-3">
-        <li className="rounded-lg border border-neutral-800 p-4">
-          <p className="font-medium">Exercise</p>
-          <p className="text-sm text-neutral-400">0-day streak</p>
-        </li>
-      </ul>
+      <HabitList />
     </section>
   );
 }
