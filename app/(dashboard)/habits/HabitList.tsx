@@ -1,26 +1,23 @@
 "use client";
 
-import { useState } from "react";
 import type { Habit } from "@/domain/habit";
+import HabitCard from "./HabitCard";
 
-export default function HabitList() {
-  const [habits, setHabits] = useState<Habit[]>([]);
+type Props = {
+  habits: Habit[];
+  onDeleteHabit: (habitId: string) => void;
+};
+
+export default function HabitList({ habits, onDeleteHabit }: Props) {
+  if (habits.length === 0) {
+    return <p>No habits yet. Add one to get started.</p>;
+  }
 
   return (
-    <div className="space-y-4">
-      {habits.length === 0 && (
-        <p className="text-sm opacity-70">
-          No habits yet. Add one to get started.
-        </p>
-      )}
-
-      <ul className="space-y-3">
-        {habits.map((habit) => (
-          <li key={habit.id} className="rounded-lg border p-4">
-            {habit.name}
-          </li>
-        ))}
-      </ul>
+    <div className="grid gap-3">
+      {habits.map((habit) => (
+        <HabitCard key={habit.id} habit={habit} onDelete={onDeleteHabit} />
+      ))}
     </div>
   );
 }

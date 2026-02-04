@@ -1,16 +1,13 @@
-import HabitList from "./HabitList";
+import HabitsClient from "./HabitsClient";
 
 export default function HabitsPage() {
   return (
-    <section className="space-y-4">
-      <header className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold">Your Habits</h2>
-        <button className="rounded-md bg-white px-3 py-1 text-sm text-black">
-          + Add
-        </button>
+    <section>
+      <header>
+        <h2>Your Habits</h2>
       </header>
 
-      <HabitList />
+      <HabitsClient />
     </section>
   );
 }

@@ -16,9 +16,9 @@ export default function DashboardNav() {
       <Link href="/habits" className={linkClass("/habits")}>
         Habits
       </Link>
-      <Link href="/analytics" className={linkClass("/analytics")}>
+      {/* <Link href="/analytics" className={linkClass("/analytics")}>
         Analytics
-      </Link>
+      </Link> */}
     </div>
   );
 }
