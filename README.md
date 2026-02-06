@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Habit Tracker PWA
 
-## Getting Started
+A production-style **Habit Tracker App** built with **Next.js (App Router)**, focusing on clean architecture, predictable state flow, and client-side persistence.
 
-First, run the development server:
+👉 **Live App:** [https://habit-trackr-theta.vercel.app/habits](https://habit-trackr-theta.vercel.app/habits)
+
+---
+
+## 🚀 Running Locally
 
 ```bash
+git clone https://github.com/luz-vndra/habit-trackr.git
+cd habit-trackr
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App runs at: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Deployment
 
-## Learn More
+Deployed on **Vercel**
+🔗 [https://habit-trackr-theta.vercel.app/habits](https://habit-trackr-theta.vercel.app/habits)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Create, view, and delete habits
+* Habit-scoped analytics routing
+* Persistent storage using **IndexedDB**
+* Responsive dashboard UI
+* Offline-friendly, client-first design
+* PWA-ready deployment
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Next.js (App Router)**
+* **React + TypeScript**
+* **IndexedDB** (client-side persistence)
+* **Tailwind CSS**
+* **Vercel** (deployment)
+
+---
+
+## 🎯 Intent
+
+This project was built to demonstrate:
+
+* Practical **Next.js App Router** usage
+* Thoughtful **frontend architecture decisions**
+* Client-side persistence beyond `localStorage`
+* Production-minded React patterns suitable for scaling
+
+---
+
+## 🧠 Architecture Overview
+
+This app follows a **feature-oriented, layered frontend architecture**:
+
+* **UI Layer**
+  Client components focused purely on rendering and user interaction
+  (`HabitList`, `NewHabitForm`, Analytics views)
+
+* **Domain Layer**
+  Strongly typed domain models (e.g. `Habit`) defining the core business shape and rules
+
+* **Storage Layer**
+  A dedicated IndexedDB abstraction responsible for all persistence logic
+  (CRUD operations, migrations, and data isolation)
+
+* **Routing & State Flow**
+
+  * App Router used for **clear URL-driven state** (`/habits`, `/habits/[id]/analytics`)
+  * Local state scoped per feature to avoid global state overuse
+  * Side effects isolated to data-access utilities
+
+This separation keeps the UI stateless where possible, improves testability, and allows the persistence layer to be swapped (e.g. API / Prisma) without impacting components.
+
+
+
+
