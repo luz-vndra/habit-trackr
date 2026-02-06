@@ -23,20 +23,23 @@ export default function HabitCard({ habit, onDelete }: Props) {
       <p className="font-medium">{habit.name}</p>
 
       <div className="flex gap-2">
-        <button onClick={logEvent} className="text-sm px-3 py-1 rounded border">
+        <button
+          onClick={logEvent}
+          className="text-sm px-3 py-1 rounded border cursor-pointer active:scale-95 active:bg-green-500/20"
+        >
           Log
         </button>
 
         <Link
           href={`/analytics/${habit.id}`}
-          className="text-sm px-3 py-1 rounded border"
+          className="text-sm px-3 py-1 rounded border active:scale-95"
         >
           Analytics
         </Link>
 
         <button
           onClick={() => onDelete(habit.id)}
-          className="text-sm px-3 py-1 rounded border text-red-600"
+          className="text-sm px-3 py-1 rounded border text-red-600 cursor-pointer active:scale-95 active:bg-red-500/20"
         >
           Delete
         </button>

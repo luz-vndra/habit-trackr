@@ -10,7 +10,7 @@ type Props = {
 export default function NewHabitForm({ onAddHabit }: Props) {
   const [name, setName] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
     if (!name.trim()) return;
 

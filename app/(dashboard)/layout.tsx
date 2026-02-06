@@ -1,4 +1,3 @@
-import Link from "next/link";
 import DashboardNav from "./DashboardNav";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
