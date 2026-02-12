@@ -3,9 +3,16 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Habit Trackr",
-  description: "Offline-first habit tracker",
+  title: "Habit Tracker",
+  applicationName: "Habit Tracker",
+  themeColor: "#0f172a",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+  },
 };
+
+
 
 export default function RootLayout({
   children,
